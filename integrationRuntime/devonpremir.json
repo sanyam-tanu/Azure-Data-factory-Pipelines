@@ -1,0 +1,7 @@
+{
+	"name": "devonpremir",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Dev-OnPrem-IR"
+	}
+}
