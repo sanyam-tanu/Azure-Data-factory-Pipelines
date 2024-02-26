@@ -80,7 +80,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"sqlReaderQuery": "select * from dataeng.categories where \ncreated_at>'@{activity('getOLDWM').output.firstRow.OldWM}' \nand created_at<='@{activity('getNEWWM').output.firstRow.NewWM} '",
+						"sqlReaderQuery": "select * from dataeng.categories where \nupdated_at>'@{activity('getOLDWM').output.firstRow.OldWM}' \nand updated_at<='@{activity('getNEWWM').output.firstRow.NewWM} '",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -88,7 +88,7 @@
 						"type": "SqlServerSink",
 						"writeBehavior": "upsert",
 						"upsertSettings": {
-							"useTempDB": true,
+							"useTempDB": false,
 							"keys": [
 								"category_id"
 							]
